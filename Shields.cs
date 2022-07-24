@@ -13,28 +13,17 @@ namespace muck_shields
 	{
 		public static List<NewItem> newItems = new List<NewItem>();
 		
-		public static Texture2D steel;
-		public static Texture2D mithril;
-		public static Texture2D adamantite;
-		public static Texture2D obamium;
-		public static Texture2D night;
-		
-		public static Sprite steel_sprite;
-		public static Sprite mithril_sprite;
-		public static Sprite adamantite_sprite;
-		public static Sprite obamium_sprite;
-		public static Sprite night_sprite;
-		
+		public static Texture2D steel, mithril, adamantite, obamium, night;
+		public static Sprite steel_sprite, mithril_sprite, adamantite_sprite, obamium_sprite, night_sprite;
 		public static Mesh shield;
 		
 		private void Awake()
 		{
 			Stream embeddedResourceStream = Shields.GetEmbeddedResourceStream("muck_shields.resources");
 			AssetBundle assetBundle = AssetBundle.LoadFromStream(embeddedResourceStream);
-			bool flag = assetBundle == null;
-			if (flag)
+			if (assetBundle == null)
 			{
-				Debug.Log("Failed to load AssetBundle ui!");
+				throw new Exception("Failed to load AssetBundle ui!");
 			}
 			Shields.steel = assetBundle.LoadAsset<Texture2D>("Shield_Texture_Color_Steel");
 			Shields.mithril = assetBundle.LoadAsset<Texture2D>("Shield_Texture_Color_Mithril");

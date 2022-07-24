@@ -6,9 +6,7 @@ namespace muck_shields
 	
 	public class NewItem
 	{
-		public string copyName;
-		public string name;
-		public string description;
+		public string copyName, name, description;
 		public Texture2D texture;
 		public Sprite sprite;
 		public Mesh mesh;
