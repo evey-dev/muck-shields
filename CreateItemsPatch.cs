@@ -17,12 +17,12 @@ namespace muck_shields
 			if (!flag)
 			{
 				Debug.Log("Adding Shields");
-				foreach (NewItem newItem in ObamiumStuff.newItems)
+				foreach (NewItem newItem in Shields.newItems)
 				{
 					InventoryItem inventoryItem = ScriptableObject.CreateInstance<InventoryItem>();
 					foreach (InventoryItem inventoryItem2 in ItemManager.Instance.allItems.Values)
 					{
-						bool flag2 = inventoryItem2.name == newItem.originalName;
+						bool flag2 = inventoryItem2.name == newItem.copyName;
 						if (flag2)
 						{
 							inventoryItem.Copy(inventoryItem2, 1);

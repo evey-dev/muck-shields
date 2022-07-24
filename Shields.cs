@@ -9,8 +9,7 @@ using UnityEngine;
 namespace muck_shields
 {
 	
-	[BepInPlugin("me.evey-dev.muck_shields", "Muck Shields", "1.0.1")]
-	public class Shields : BaseUnityPlugin
+	public class Shields
 	{
 		public static List<NewItem> newItems = new List<NewItem>();
 		
@@ -30,7 +29,6 @@ namespace muck_shields
 		
 		private void Awake()
 		{
-			base.Logger.LogInfo("Started");
 			Stream embeddedResourceStream = Shields.GetEmbeddedResourceStream("muck_shields.resources");
 			AssetBundle assetBundle = AssetBundle.LoadFromStream(embeddedResourceStream);
 			bool flag = assetBundle == null;

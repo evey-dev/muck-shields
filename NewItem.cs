@@ -14,7 +14,7 @@ namespace muck_shields
 		public Mesh mesh;
 		public InventoryItem.CraftRequirement[] requirements;
 		public int factor;
-		public ItemTag tag = ItemTag.LeftHanded;
+		public InventoryItem.ItemTag tag = InventoryItem.ItemTag.LeftHanded;
 		public InventoryItem gameItem;
 		
 		public NewItem(string copyName, string name, string description, Texture2D texture, Sprite sprite, Mesh mesh, List<string> requirement_names, List<int> requirement_amounts, int factor)
@@ -36,7 +36,7 @@ namespace muck_shields
 					list.Add(new InventoryItem.CraftRequirement
 					{
 						item = inventoryItem,
-						amount = newItem.requirements[num].amount
+						amount = requirement_amounts[num]
 					});
 				}
 			}
