@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace muck-shields
+namespace muck_shields
 {
 	
 	public class NewItem

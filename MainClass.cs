@@ -1,8 +1,8 @@
 using BepInEx;
 
-namespace muck-shields
+namespace muck_shields
 {
-    [BepInPlugin("me.evey-dev.muck-shields", "Muck Shields", "1.0")]
+    [BepInPlugin("me.evey-dev.muck_shields", "Muck Shields", "1.0")]
 
     public class MainClass : BaseUnityPlugin 
     {
@@ -17,7 +17,7 @@ namespace muck-shields
                 Destroy(this);
             
             log = Logger;
-            harmony = new Harmony("me.evey-dev.muck-shields");
+            harmony = new Harmony("me.evey-dev.muck_shields");
         }
 
     }

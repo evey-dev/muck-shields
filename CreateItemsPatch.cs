@@ -4,7 +4,7 @@ using HarmonyLib;
 using TMPro;
 using UnityEngine;
 
-namespace muck-shields
+namespace muck_shields
 {
 	internal class CreateItemsPatch
 	{
@@ -39,7 +39,7 @@ namespace muck-shields
 					inventoryItem.sprite = newItem.sprite;
 					inventoryItem.mesh = newItem.mesh;
 					inventoryItem.tag = newItem.tag;
-					inventoryItem.requirements = newItem.requirements
+					inventoryItem.requirements = newItem.requirements;
 					ItemManager.Instance.allItems.Add(inventoryItem.id, inventoryItem);
 					Debug.Log("Added: " + inventoryItem.name);
 					newItem.gameItem = inventoryItem;

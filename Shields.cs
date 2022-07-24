@@ -6,10 +6,10 @@ using BepInEx;
 using HarmonyLib;
 using UnityEngine;
 
-namespace muck-shields
+namespace muck_shields
 {
 	
-	[BepInPlugin("me.evey-dev.muck-shields", "Muck Shields", "1.0.1")]
+	[BepInPlugin("me.evey-dev.muck_shields", "Muck Shields", "1.0.1")]
 	public class Shields : BaseUnityPlugin
 	{
 		public static List<NewItem> newItems = new List<NewItem>();
@@ -31,7 +31,7 @@ namespace muck-shields
 		private void Awake()
 		{
 			base.Logger.LogInfo("Started");
-			Stream embeddedResourceStream = Shields.GetEmbeddedResourceStream("muck-shields.resources");
+			Stream embeddedResourceStream = Shields.GetEmbeddedResourceStream("muck_shields.resources");
 			AssetBundle assetBundle = AssetBundle.LoadFromStream(embeddedResourceStream);
 			bool flag = assetBundle == null;
 			if (flag)
