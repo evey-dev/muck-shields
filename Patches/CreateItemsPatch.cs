@@ -4,7 +4,7 @@ using HarmonyLib;
 using TMPro;
 using UnityEngine;
 
-namespace muck_shields
+namespace MuckShields
 {
 	internal class CreateItemsPatch
 	{

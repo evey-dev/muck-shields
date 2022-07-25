@@ -2,9 +2,9 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net4.7.2</TargetFramework>
         <LangVersion>latest</LangVersion>
-		<RootNamespace>muck_shields</RootNamespace>
+		<RootNamespace>MuckShields</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
