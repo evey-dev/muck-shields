@@ -2,6 +2,7 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using UnityEngine;
 
 namespace muck_shields
 {
@@ -9,7 +10,6 @@ namespace muck_shields
 
     public class Main : BaseUnityPlugin 
     {
-
         public const string
         MODNAME = "Muck Shields",
         // AUTHOR = "Your Mother",
@@ -27,6 +27,7 @@ namespace muck_shields
 
         public void Start() {
             harmony.PatchAll(assembly);
+            Debug.Log("\n\n\n\n\n\n\n\n\nMAIN REACHED\n\n\n\n\n\n\n\n\n");
         }
 
     }

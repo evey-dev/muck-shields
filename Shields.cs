@@ -19,6 +19,7 @@ namespace muck_shields
 		
 		private void Awake()
 		{
+            Debug.Log("\n\n\n\n\n\n\n\n\nSHIELDS.CS REACHED\n\n\n\n\n\n\n\n\n");
 			Stream embeddedResourceStream = Shields.GetEmbeddedResourceStream("muck_shields.resources");
 			AssetBundle assetBundle = AssetBundle.LoadFromStream(embeddedResourceStream);
 			if (assetBundle == null)
