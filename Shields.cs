@@ -38,12 +38,13 @@ namespace muck_shields
 			Shields.shield = assetBundle.LoadAsset<Mesh>("Shield_Mesh");
 			
 			Harmony.CreateAndPatchAll(typeof(CreateItemsPatch), null);
+            Harmony.CreateAndPatchAll(typeof(ShieldImplementPatch), null);
 
-			Shields.newItems.Add(new NewItem("Steel Helmet", "Steel Shield", "it protecc", Shields.steel, Shields.steel_sprite, Shields.shield, new List<string>() {"Iron bar", "Wood"}, new List<int>() {5, 5}, 2));
-			Shields.newItems.Add(new NewItem("Mithril Helmet", "Mithril Shield", "it protecc", Shields.mithril, Shields.mithril_sprite, Shields.shield, new List<string>() {"Mithril bar", "Birch Wood"}, new List<int>() {5, 5}, 2));
-			Shields.newItems.Add(new NewItem("Adamantite Helmet", "Adamantite Shield", "it protecc", Shields.adamantite, Shields.adamantite_sprite, Shields.shield, new List<string>() {"Adamantite bar", "Fir Wood"}, new List<int>() {5, 5}, 2));
-			Shields.newItems.Add(new NewItem("Obamium Helmet", "Obamium Shield", "get down mr president!", Shields.obamium, Shields.obamium_sprite, Shields.shield, new List<string>() {"Obamium bar", "Dark Oak Wood"}, new List<int>() {5, 5}, 2));
-			Shields.newItems.Add(new NewItem("Obamium Helmet", "Night Shield", "Dark as the night sky", Shields.night, Shields.night_sprite, Shields.shield, new List<string>() {"Black Shard", "Dark Oak Wood"}, new List<int>() {1, 5}, 2));;
+			Shields.newItems.Add(new NewItem("Steel Chestplate", "Steel Shield", "it protecc", Shields.steel, Shields.steel_sprite, Shields.shield, new List<string>() {"Iron bar", "Wood"}, new List<int>() {5, 5}, 1));
+			Shields.newItems.Add(new NewItem("Mithril Chestplate", "Mithril Shield", "it protecc", Shields.mithril, Shields.mithril_sprite, Shields.shield, new List<string>() {"Mithril bar", "Birch Wood"}, new List<int>() {5, 5}, 2));
+			Shields.newItems.Add(new NewItem("Adamantite Chestplate", "Adamantite Shield", "it protecc", Shields.adamantite, Shields.adamantite_sprite, Shields.shield, new List<string>() {"Adamantite bar", "Fir Wood"}, new List<int>() {5, 5}, 2));
+			Shields.newItems.Add(new NewItem("Obamium Chestplate", "Obamium Shield", "get down mr president!", Shields.obamium, Shields.obamium_sprite, Shields.shield, new List<string>() {"Obamium bar", "Dark Oak Wood"}, new List<int>() {5, 5}, 2));
+			Shields.newItems.Add(new NewItem("Obamium Chestplate", "Night Shield", "Dark as the night sky", Shields.night, Shields.night_sprite, Shields.shield, new List<string>() {"Black Shard", "Dark Oak Wood"}, new List<int>() {1, 5}, 2));;
 		}
 
 		
