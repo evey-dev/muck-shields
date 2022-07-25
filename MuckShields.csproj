@@ -6,11 +6,11 @@
         <LangVersion>latest</LangVersion>
 		<RootNamespace>MuckShields</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>disable</Nullable>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="Resources\*.*" />
+		<EmbeddedResource Include="Resources\resources" />
 
         <Reference Include="UnityEngine">
             <HintPath>$(GameDir)\Muck_Data\Managed\UnityEngine.dll</HintPath>

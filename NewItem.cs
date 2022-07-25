@@ -16,6 +16,8 @@ namespace MuckShields
 		
 		public NewItem(string copyName, string name, string description, Texture2D texture, Sprite sprite, Mesh mesh, List<string> requirement_names, List<int> requirement_amounts, int factor)
 		{
+			Debug.Log("hi");
+			Debug.Log($"hi, {copyName}, {name}, {description}, {texture}, {sprite}, {mesh}, {factor}");
 			this.copyName = copyName;
 			this.name = name;
 			this.description = description;
@@ -23,6 +25,8 @@ namespace MuckShields
 			this.sprite = sprite;
 			this.mesh = mesh;
 			this.factor = factor;
+			Debug.Log("hi2");
+			Debug.Log(ItemManager.Instance);
 			
 			List<InventoryItem.CraftRequirement> list = new List<InventoryItem.CraftRequirement>();
 			foreach (InventoryItem inventoryItem in ItemManager.Instance.allItems.Values)
@@ -30,6 +34,8 @@ namespace MuckShields
 				int num = requirement_names.IndexOf(inventoryItem.name);
 				if (num > -1)
 				{
+					Debug.Log($"found {inventoryItem.name}");
+
 					list.Add(new InventoryItem.CraftRequirement
 					{
 						item = inventoryItem,
