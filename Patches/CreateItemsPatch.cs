@@ -60,7 +60,7 @@ namespace MuckShields
 		[HarmonyPostfix]
 		private static void CraftingPostfix(CraftingUI __instance)
 		{
-			if (__instance.tabParent.GetChild(3).GetComponentInChildren<TextMeshProUGUI>().text.Equals("Armor"))
+			if (!__instance.handCrafts && __instance.tabParent.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text.Equals("Other"))
 			{
 				foreach (NewItem newItem in Shields.newItems)
 				{
