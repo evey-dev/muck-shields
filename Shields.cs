@@ -37,7 +37,7 @@ namespace MuckShields
 		}
 
 		private void loadAssets() {
-			Stream embeddedResourceStream = GetEmbeddedResourceStream("MuckShields.Resources.resources");
+			Stream embeddedResourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MuckShields.Resources.resources");
 			AssetBundle assetBundle = AssetBundle.LoadFromStream(embeddedResourceStream);
 			if (assetBundle == null)
 			{
@@ -54,11 +54,6 @@ namespace MuckShields
 			Shields.obamium_sprite = assetBundle.LoadAsset<Sprite>("Shield_Sprite_Color_Obamium");
 			Shields.night_sprite = assetBundle.LoadAsset<Sprite>("Shield_Sprite_Color_Night");
 			Shields.shield = assetBundle.LoadAsset<Mesh>("Shield_Mesh");
-		}
-
-		public static Stream GetEmbeddedResourceStream(string resourceName)
-		{
-			return Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
 		}
 	}
 }

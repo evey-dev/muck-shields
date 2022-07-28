@@ -17,6 +17,11 @@
             <Private>False</Private>
         </Reference>
 
+		<Reference Include="UnityEngine.UI">
+            <HintPath>$(GameDir)\Muck_Data\Managed\UnityEngine.UI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+
         <Reference Include="UnityEngine.CoreModule">
             <HintPath>$(GameDir)\Muck_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
             <Private>False</Private>
