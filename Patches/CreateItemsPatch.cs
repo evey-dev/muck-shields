@@ -9,10 +9,12 @@ namespace MuckShields
 {
 	public class CreateItemsPatch
 	{
+		public static GameObject leftHandCell;
 		[HarmonyPatch(typeof(InventoryUI), "Awake")]
 		[HarmonyPostfix]
 		private static void AddComponentToCell() {
-			GameObject.Find("InventoryNew").GetComponent<InventoryUI>().allCells[29].gameObject.AddComponent<UpdateShield>();
+			leftHandCell = GameObject.Find("InventoryNew").GetComponent<InventoryUI>().allCells[29].gameObject;
+			leftHandCell.AddComponent<UpdateShield>();
 		}
 
 		[HarmonyPatch(typeof(ItemManager), "InitAllItems")]
