@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Reflection;
 using BepInEx;
 using BepInEx.Logging;
@@ -14,7 +16,7 @@ namespace MuckShields
 		MODNAME = "Muck Shields",
 		// AUTHOR = "Your Mother",
 		ID = "evey-dev.MuckShields",
-		VERSION = "1.0";
+		VERSION = "1.0.0.0";
 
 		public Harmony harmony;
 		public Assembly assembly;
@@ -38,7 +40,7 @@ namespace MuckShields
 		}
 
 		private void loadAssets() {
-			Stream embeddedResourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MuckShields.Resources.resources");
+            System.IO.Stream embeddedResourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MuckShields.Resources.resources");
 			AssetBundle assetBundle = AssetBundle.LoadFromStream(embeddedResourceStream);
 			if (assetBundle == null)
 			{

@@ -37,16 +37,20 @@ namespace MuckShields
 				Server.clients[pnum].player.totalArmor -= armor;
 			}
 		}
-		private static void UpdateShield(int key, int objectID) {
-			GameManager.players[key].onlinePlayer;
-
-			inventoryShield.AddComponent<MeshFilter>();
-			inventoryShield.AddComponent<MeshRenderer>();
-			inventoryShield.transform.SetParent(GameObject.Find("OnlinePlayer(Clone)/newPlayer/Armature/Hips/Torso 1/Shoulder.L/Hand.L/Hand.L_end/").transform);
-			inventoryShield.transform.localPosition = new Vector3(0, 0, 0);
-			inventoryShield.transform.localEulerAngles = new Vector3(80, 275, 170);
-			inventoryShield.transform.localScale = new Vector3(2, 2, 2);
-			inventoryShield.layer = LayerMask.NameToLayer("Player");
+		public static void UpdateShield(int key, int objectID) {
+			GameObject shield = GameManager.players[key].onlinePlayer.gameObject.transform.Find("newPlayer/Armature/Hips/Torso 1/Shoulder.L/Hand.L/Hand.L_end/OnlineShield").gameObject;
+			if (objectID >= 0)
+			{
+				shield.GetComponent<MeshFilter>().mesh = ItemManager.Instance.allItems[objectID].mesh;
+				shield.GetComponent<MeshFilter>().sharedMesh = ItemManager.Instance.allItems[objectID].mesh;
+				shield.GetComponent<Renderer>().material = ItemManager.Instance.allItems[objectID].material;
+			}
+			else
+			{
+				shield.GetComponent<MeshFilter>().mesh = null;
+				shield.GetComponent<MeshFilter>().sharedMesh = null;
+				shield.GetComponent<Renderer>().material = null;
+			}
 		}
 	}
 }

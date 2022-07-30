@@ -50,6 +50,7 @@ namespace MuckShields
 			ShowInInventory(itemID);
 			ShowInHand(itemID);
 			UiSfx.Instance.PlayArmor();
+			OnlinePatch.ShieldInHandCS(itemID);
 		}
 		public void ShowInInventory(int itemID) {
 			if (itemID >= 0)
