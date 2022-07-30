@@ -11,13 +11,13 @@ Step 5: Calls OnlinePlayer's UpdateWeapon
 */
 namespace MuckShields
 {
-	public class OnlinePatch : MonoBehaviour
+	public class OnlinePatch
 	{
 
 		public void Awake()
 		{
 			LocalClient.packetHandlers.Add(69, new LocalClient.PacketHandler(OnlinePatch.ShieldInHandCH));
-
+			
 		}
 
 		// [HarmonyPatch(typeof(ServerSend), "SendTCPDataToAll", new Type[] {typeof(int), typeof(Packet)})]
@@ -29,7 +29,7 @@ namespace MuckShields
 				using (Packet packet = new Packet(69))
 				{
 					packet.Write(itemID);
-					typeof(ClientSend).GetMethod("SendTCPData", BindingFlags.NonPublic | BindingFlags.Static).Invoke(new ClientSend(), new object[] { packet });
+					typeof(ClientSend).GetMethod("SendTCPData", BindingFlags.NonPublic | BindingFlags.Static).Invoke(null, new object[] { packet });
 				}
 			}
 			catch (Exception message)
@@ -40,9 +40,9 @@ namespace MuckShields
 
 		public static void ShieldInHandCH(Packet packet)
 		{
-			int key = packet.ReadInt(true);
+            int num = packet.ReadInt();
 			int objectID = packet.ReadInt(true);
-			GameManager.players[key].onlinePlayer.UpdateWeapon(objectID); // change this
+			ShieldImplementPatch.UpdateShield(key, objectID);
 		}
 
 		public static void ShieldInHandSS(int fromClient, int objectID)
@@ -51,7 +51,7 @@ namespace MuckShields
 			{
 				packet.Write(fromClient);
 				packet.Write(objectID);
-				typeof(ServerSend).GetMethod("SendTCPDataToAll", (BindingFlags.NonPublic | BindingFlags.Static), null, new Type[] { typeof(int), typeof(int) }, null).Invoke(new ServerSend(), new object[] { fromClient, packet });
+				typeof(ServerSend).GetMethod("SendTCPDataToAll", (BindingFlags.NonPublic | BindingFlags.Static), null, new Type[] { typeof(int), typeof(int) }, null).Invoke(null, new object[] { fromClient, packet });
 			}
 		}
 

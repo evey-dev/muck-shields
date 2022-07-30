@@ -37,5 +37,16 @@ namespace MuckShields
 				Server.clients[pnum].player.totalArmor -= armor;
 			}
 		}
+		private static void UpdateShield(int key, int objectID) {
+			GameManager.players[key].onlinePlayer;
+
+			inventoryShield.AddComponent<MeshFilter>();
+			inventoryShield.AddComponent<MeshRenderer>();
+			inventoryShield.transform.SetParent(GameObject.Find("OnlinePlayer(Clone)/newPlayer/Armature/Hips/Torso 1/Shoulder.L/Hand.L/Hand.L_end/").transform);
+			inventoryShield.transform.localPosition = new Vector3(0, 0, 0);
+			inventoryShield.transform.localEulerAngles = new Vector3(80, 275, 170);
+			inventoryShield.transform.localScale = new Vector3(2, 2, 2);
+			inventoryShield.layer = LayerMask.NameToLayer("Player");
+		}
 	}
 }

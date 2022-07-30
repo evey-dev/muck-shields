@@ -17,7 +17,7 @@ namespace MuckShields
 			inventoryShield = new GameObject();
 			inventoryShield.AddComponent<MeshFilter>();
 			inventoryShield.AddComponent<MeshRenderer>();
-			inventoryShield.transform.SetParent(GameObject.Find("OnlinePlayer(Clone)/newPlayer/Armature/Hips/Torso 1/Shoulder.L/Hand.L/Hand.L_end").transform);
+			inventoryShield.transform.SetParent(GameObject.Find("UI (1)/CraftingNew/CraftingLayout/Handcrafting/InventoryLayout/Player / Armor / Arrows/Player/Cube/PreviewPlayer/newPlayer/Armature/Hips/Torso 1/Shoulder.L/Hand.L/Hand.L_end").transform);
 			inventoryShield.transform.localPosition = new Vector3(0, 0, 0);
 			inventoryShield.transform.localEulerAngles = new Vector3(80, 275, 170);
 			inventoryShield.transform.localScale = new Vector3(2, 2, 2);
@@ -38,25 +38,25 @@ namespace MuckShields
 		}
 		public void OnPointerDown(PointerEventData eventData)
 		{
-			int itemId;
+			int itemID;
 			if (this.cell.currentItem == null)
 			{
-				itemId = -1;
+				itemID = -1;
 			}
 			else
 			{
-				itemId = this.cell.currentItem.id;
+				itemID = this.cell.currentItem.id;
 			}
-			ShowInInventory(itemId);
-			ShowInHand(itemId);
+			ShowInInventory(itemID);
+			ShowInHand(itemID);
 			UiSfx.Instance.PlayArmor();
 		}
-		public void ShowInInventory(int itemId) {
-			if (itemId >= 0)
+		public void ShowInInventory(int itemID) {
+			if (itemID >= 0)
 			{
-				inventoryShield.GetComponent<MeshFilter>().mesh = ItemManager.Instance.allItems[itemId].mesh;
-				inventoryShield.GetComponent<MeshFilter>().sharedMesh = ItemManager.Instance.allItems[itemId].mesh;
-				inventoryShield.GetComponent<Renderer>().material = ItemManager.Instance.allItems[itemId].material;
+				inventoryShield.GetComponent<MeshFilter>().mesh = ItemManager.Instance.allItems[itemID].mesh;
+				inventoryShield.GetComponent<MeshFilter>().sharedMesh = ItemManager.Instance.allItems[itemID].mesh;
+				inventoryShield.GetComponent<Renderer>().material = ItemManager.Instance.allItems[itemID].material;
 				// inventoryShield.SetActive(true);
 			}
 			else
@@ -67,12 +67,12 @@ namespace MuckShields
 				// inventoryShield.SetActive(false);
 			}
 		}
-		public void ShowInHand(int itemId) {
-			if (itemId >= 0)
+		public void ShowInHand(int itemID) {
+			if (itemID >= 0)
 			{
-				handheldShield.GetComponent<MeshFilter>().mesh = ItemManager.Instance.allItems[itemId].mesh;
-				handheldShield.GetComponent<MeshFilter>().sharedMesh = ItemManager.Instance.allItems[itemId].mesh;
-				handheldShield.GetComponent<Renderer>().material = ItemManager.Instance.allItems[itemId].material;
+				handheldShield.GetComponent<MeshFilter>().mesh = ItemManager.Instance.allItems[itemID].mesh;
+				handheldShield.GetComponent<MeshFilter>().sharedMesh = ItemManager.Instance.allItems[itemID].mesh;
+				handheldShield.GetComponent<Renderer>().material = ItemManager.Instance.allItems[itemID].material;
 				// handheldShield.SetActive(true);
 			}
 			else
