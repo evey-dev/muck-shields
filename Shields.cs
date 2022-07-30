@@ -34,6 +34,7 @@ namespace MuckShields
 			harmony.PatchAll(assembly);
 			Harmony.CreateAndPatchAll(typeof(CreateItemsPatch), null);
 			Harmony.CreateAndPatchAll(typeof(ShieldImplementPatch), null);
+			Harmony.CreateAndPatchAll(typeof(OnlinePatch), null);
 		}
 
 		private void loadAssets() {
